@@ -1,0 +1,87 @@
+.form{
+    width: 80%;
+    border: 1px solid black;
+  
+}
+.box{
+    border-bottom: 1px solid #000;
+    margin: 10%;
+    
+    
+   
+}
+.product{
+    position: relative;
+    margin: 10%;
+    width: 50%;
+    display: flex;
+    font-size: 1vmax;
+    align-items: baseline;
+    margin-left: 0px;
+    
+    
+    font-weight: bold;
+    border: none; 
+    
+    background-color: white;
+    cursor: pointer;
+    
+}
+
+.a1{
+    position: absolute;
+    text-align: right;
+    width: 200%;
+    font-size: 1vmax;
+    font-weight: bold;
+    bottom: 10%;
+    
+  
+}
+.Hot{
+    display: flex;
+    text-align: center;
+    margin-left: 15%;
+    animation: dropdown-slide 0.5s ease-in-out;
+}
+
+.Hottable{
+
+   
+}
+
+.button{
+    width: 100%;
+    
+    border: none; 
+    background-color: white;
+    margin-bottom: 30%;
+
+}
+@keyframes dropdown-slide {
+    0% { 
+        opacity: 0;
+        transform: translateY(-20%);
+
+    }
+    25% {
+        opacity: 0.25;
+        transform: translateY(0%);
+
+    }
+    50%{
+        opacity: 0.5;
+        transform: translateY(10%);
+
+    }
+    75%{
+        opacity: 0.75;
+        transform: translateY(15%);
+
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(10%);
+    }
+    
+}
