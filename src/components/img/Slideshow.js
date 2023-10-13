@@ -7,7 +7,7 @@ import classes from "./Slidershow.module.css";
 
 const Slideshow = () => {
   return (
-    <div>
+    <div >
       <img src={emalia}></img>
     </div>
     

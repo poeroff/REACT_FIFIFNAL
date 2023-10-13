@@ -10,6 +10,7 @@ import Liveranking from "../body/Liveranking";
 
 
 const Header = (props) => {
+    console.log(props.data)
     
     const [dropdown, setdropdonw] = useState(false);
     const [dropdown1, setdropdonw1] = useState(false);

@@ -11,6 +11,7 @@ import { useLoaderData } from "react-router-dom";
 
 const Root = () => {
     const data = useLoaderData();
+    console.log(data)
     
 
 
@@ -35,18 +36,18 @@ const Root = () => {
 }
 export default Root;
 export async function loader({ request, params }) {
+    try {
+        const response = await fetch('https://chlxodud-7887d-default-rtdb.firebaseio.com/product.json');
 
-
-    const response = await fetch('https://chlxodud-7887d-default-rtdb.firebaseio.com/product.json');
-
-    if (!response.ok) {
-
-    }
-
-    else {
+        if (!response.ok) {
+            throw new Error('Failed to fetch data');
+        }
         const data = await response.json();
+        console.log(data);
         return data;
 
+    } catch (error) {
+        console.error('Error loading data:', error);
+        return { error: 'Failed to load data' }; // You can return an error object or message
     }
 }
-
