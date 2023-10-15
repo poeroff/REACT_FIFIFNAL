@@ -1,10 +1,13 @@
 
 
 
-.dropdown_item{
-    width: 100%;
-    display: flex;
-    gap: 2;
-
+.dropdown_item {
+  display: flex;
+  gap: 2rem; /* 원하는 간격으로 조정하세요. */
+  align-items: center;
+  text-decoration: none;
+  margin-top: 8%;
+  margin-bottom: 8%;
+  color: black;
 }
 

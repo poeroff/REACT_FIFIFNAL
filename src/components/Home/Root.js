@@ -2,32 +2,26 @@
 import { Outlet } from "react-router-dom"
 import Header from "../header/Header";
 import Slider from "../side/Slider";
-import Slideshow from "../img/Slideshow";
+import Slideshow from "../imgslider/Slideshow";
 import Liveranking from "../body/Liveranking";
 import classes from "./Root.module.css";
 
 import { useLoaderData } from "react-router-dom";
+import Underhead from "../underheader/Underhead";
 
 
 const Root = () => {
     const data = useLoaderData();
-    console.log(data)
-    
-
-
-
+   
     return (
         <div>
             <header>
-                <Header data ={data}> </Header>
+                <Header data={data}> </Header>
             </header>
+            <Underhead></Underhead>
             <Slideshow></Slideshow>
-            <div className={classes.body}>
-                <div className={classes.Slider}>
-                    <Slider></Slider>
-                </div>
-                <Liveranking></Liveranking>
-            </div>
+            <Slider></Slider>
+
             <main>
                 <Outlet></Outlet>
             </main>
@@ -43,7 +37,7 @@ export async function loader({ request, params }) {
             throw new Error('Failed to fetch data');
         }
         const data = await response.json();
-        console.log(data);
+
         return data;
 
     } catch (error) {

@@ -5,12 +5,12 @@ import Dropdown from "./Dropdown";
 import React from "react";
 import Slider from "../side/Slider";
 import { useLoaderData } from "react-router-dom";
-import Slideshow from "../img/Slideshow";
+import Slideshow from "../imgslider/Slideshow";
 import Liveranking from "../body/Liveranking";
 
 
 const Header = (props) => {
-    console.log(props.data)
+    
     
     const [dropdown, setdropdonw] = useState(false);
     const [dropdown1, setdropdonw1] = useState(false);
@@ -103,7 +103,7 @@ const Header = (props) => {
                             <h2 > TAE SINSA </h2>
                         </div>
                         <div className={classes.li} onMouseOver={handleMouseOver} onMouseOut={handleMousedown}>
-                            <li > <Link to="" className="nav-link px-2 link-secondary" >랭킹</Link></li>
+                            <li > <Link to="Ranking" className="nav-link px-2 link-secondary" >랭킹</Link></li>
                             {dropdown && <div className={classes.dropdown}>
                                 <Dropdown data={props.data.Ranking}></Dropdown>
 
@@ -154,13 +154,12 @@ const Header = (props) => {
                         </div>
                         <div className={classes.li} onMouseOver={handleMouseOver7} onMouseOut={handleMousedown7}>
                             <li > <Link to="" className="nav-link px-2 link-secondary" >브랜드</Link></li>
-                            {dropdown7 && <div className={classes.dropdown7}>
-                                <Dropdown data={props.data.Ranking}></Dropdown>
-                            </div>}
+                           
                         </div>     
                     </ul>
                 </div>
-            </header>   
+            </header>
+        
         </React.Fragment>
     )
 }

@@ -1,0 +1,33 @@
+
+.ul{
+    color: black;
+    display: flex;
+    list-style: none;
+    width: 100%;
+    border-bottom: 1px solid gray;
+    float: right;
+    
+    
+
+}
+.underbutton{
+    font-weight: bold;
+    width: 100%;
+    color: white;
+    background-color: black;
+  
+}
+
+.ul li{
+    text-decoration: none;
+    color: black;
+    font-size: 125%;
+    margin-left: 5%;
+    color: black;
+  
+
+
+}
+.no-underline {
+    text-decoration: none;
+  }
