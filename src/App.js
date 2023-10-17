@@ -6,11 +6,17 @@ import MypageRoot from './mypageComponents/MypageRoot';
 import HOME from './mypageComponents/HOME';
 
 const router = createBrowserRouter([
-  {path: '/',element: <Root />,  loader: RootLoader},
-  {path: "mypage",  children : [ 
-    {index : true, element: <MypageRoot></MypageRoot>},
-    {path : "HOME",element:<HOME></HOME>}
+  {path: '/',children: [
+    {index : true, element: <Root />, loader: RootLoader},
+    {path: "mypage",  children : [ 
+      {index : true, element: <MypageRoot></MypageRoot>},
+      {path : "HOME",element:<HOME></HOME>}
+    ]},
+    
+
+
   ]},
+ 
  
      
     

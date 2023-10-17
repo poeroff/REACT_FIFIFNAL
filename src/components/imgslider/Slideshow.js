@@ -68,7 +68,7 @@ const Slideshow = () => {
 
 
   return (
-    <React.Fragment >
+    <div className={classes.Slidershow}>
       <AnimatePresence>
       <div className={classes.slider} >
           {count === 0 && <motion.div className={classes.img}  initial = {{opacity: 0, x : 0}} animate={{opacity:1,x : 0}} transition={{duration:0.75}} exit={{opacity:0, x:0}}> <Sliderimg img1 ={shoes} img2={pants} img3={girl}></Sliderimg> </motion.div>}
@@ -80,13 +80,13 @@ const Slideshow = () => {
        
 
      
-      <div className={classes.button}>
+      {/* <div className={classes.button}>
         <button  type ="button" onClick={leftHandler} onMouseOver={mousein} onMouseOut={mouseout} > left </button>
         <p> {count}/17</p>
         <button  type ="button"  onClick={rightHandler} onMouseOver={mousein} onMouseOut={mouseout}> right</button>
-      </div>
+      </div> */}
      
-    </React.Fragment>
+    </div>
   )
 }
 

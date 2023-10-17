@@ -6,24 +6,37 @@
     width: 100%;
     border-bottom: 1px solid gray;
     float: right;
+    position: sticky;
+    justify-content: flex-start;
     
     
 
 }
 .underbutton{
-    font-weight: bold;
-    width: 100%;
-    color: white;
+    appearance: none;
+    font-family: inherit;
+    font-size: inherit;
+    background-color: white;
+    
+    padding-left: 10%;
+    width: 200%;
+    cursor: pointer;
+    
+}
+.underbutton:hover{
     background-color: black;
-  
+    color: white;
 }
 
-.ul li{
+.lies{
     text-decoration: none;
+    
     color: black;
-    font-size: 125%;
-    margin-left: 5%;
+    font-size: 110%;
+    margin-left: 8%;
     color: black;
+    
+    
   
 
 
@@ -31,3 +44,4 @@
 .no-underline {
     text-decoration: none;
   }
+

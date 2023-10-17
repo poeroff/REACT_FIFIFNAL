@@ -9,6 +9,7 @@
     display: flex;
 }
 .img{
+    margin-bottom: 3%;
     display: flex;
    
  
@@ -21,6 +22,9 @@
     width: 100%;
     justify-content: center;
 }
-
+.Slidershow{
+   
+    border-bottom: 1px solid gray;
+}
 
 
