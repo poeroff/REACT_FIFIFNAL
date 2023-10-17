@@ -1,0 +1,80 @@
+.mypage_info {
+    position: relative;
+    background-color: black;
+    padding: 3rem 0 3rem 3rem;
+}
+
+.mypage_info>h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.mypage_info_2 {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.mypage_info_2>a {
+    margin-left: 3rem;
+}
+
+.mypage_info_3 {
+    overflow: hidden;
+}
+
+.mypage_info_profile {
+    float: left;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 100%;
+    background-color: wheat;
+}
+
+.mypage_info_4 {
+    float: left;
+    padding-left: 3rem;
+}
+
+.mypage_info_name>strong {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.mypage_info_name>a {
+    font-size: 0.8rem;
+    color: gray;
+}
+
+.mypage_info_level>strong {
+    font-size: 1.5rem;
+}
+
+.mypage_info_level>span {
+    font-size: small;
+    color: gray;
+    margin: 1%;
+}
+
+.mypage_info_level_2 {
+    font-size: 0.9rem;
+}
+
+.mypage_info_level_2>a {
+    font-size: 0.7rem;
+    color: gray;
+    margin-left: 2%;
+}
+.mypage_info_menu{
+    display: flex;
+    float: left;
+    padding: 2rem 0 0 3rem;
+}
+.mypage_info_menu>a{
+    display: flex;
+    flex-direction: column;
+    width: 10rem;
+}
+.mypage_info_menu>a>strong{
+    font-size: 2rem;
+}
