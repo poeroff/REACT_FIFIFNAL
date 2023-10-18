@@ -13,16 +13,20 @@ import Underhead from "../underheader/Underhead";
 
 const Root = () => {
     const data = useLoaderData();
-   
+
     return (
         <div>
-            
+
             <header>
                 <Header data={data}> </Header>
             </header>
             <Underhead></Underhead>
             <Slideshow></Slideshow>
-            <Slider></Slider>
+            <section className={classes.section}>
+                <Slider></Slider>
+                <Liveranking> </Liveranking>
+            </section>
+
 
             <main>
                 <Outlet></Outlet>

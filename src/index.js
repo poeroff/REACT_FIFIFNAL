@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Provider } from "react-redux"
+import 'semantic-ui-css/semantic.min.css'
 
 import store from "../src/store/index"
 

@@ -99,7 +99,7 @@ const Header = (props) => {
             <header className={classes.header}>
                 <div className={classes.container}>
                     <ul className={classes.nav} >
-                        <div className={classes.h1}>
+                        <div className={classes.sinsa} >
                             <h2 > TAE SINSA </h2>
                         </div>
                         <div className={classes.li} onMouseOver={handleMouseOver} onMouseOut={handleMousedown}>
