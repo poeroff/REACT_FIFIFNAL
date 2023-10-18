@@ -4,9 +4,9 @@ const MypageRoot = () => {
     return (
         <React.Fragment>
             <div >
-                <nav class={classes.nav}>
-                    <span class={classes.nav_span}>바로접속 ON</span>
-                    <div class={classes.nav_div}>
+                <nav className={classes.nav}>
+                    <span className={classes.nav_span}>바로접속 ON</span>
+                    <div className={classes.nav_div}>
                         <h3>나의 쇼핑 활동</h3>
                         <a>주문 내역 조회</a>
                         <a>구매후기</a>
@@ -21,7 +21,7 @@ const MypageRoot = () => {
                         <a>매장 결제 내역</a>
                         <a>회원 혜택</a>
                     </div>
-                    <div class={classes.nav_div}>
+                    <div className={classes.nav_div}>
                         <h3>커뮤니티</h3>
                         <a>게시물/스크랩/댓글</a>
                     </div>
