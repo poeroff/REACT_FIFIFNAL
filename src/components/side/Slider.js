@@ -89,6 +89,20 @@ const Slider = () => {
                     <div className={classes.a1}>+</div>
                 </button>
             </div>
+            <div className={classes.box}>
+                <button className={classes.product}>
+                    <span> 바지</span>
+                    <div className={classes.a1}>+</div>
+                </button>
+            </div>
+            <div className={classes.box}>
+                <button className={classes.product}>
+                    <span> 바지</span>
+                    <div className={classes.a1}>+</div>
+                </button>
+            </div>
+          
+            
 
 
 

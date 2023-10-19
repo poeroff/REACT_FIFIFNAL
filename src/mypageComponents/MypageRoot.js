@@ -23,7 +23,7 @@ const MypageRoot = () => {
                     </div>
                     <div className={classes.nav_div}>
                         <h3>커뮤니티</h3>
-                        <a>게시물/스크랩/댓글</a>
+                        {/* <a>게시물/스크랩/댓글</a> */}
                     </div>
                 </nav>
             </div>
