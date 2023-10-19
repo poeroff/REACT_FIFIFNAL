@@ -1,12 +1,11 @@
-
+.Livediv{
+    border-bottom: 1px solid black;
+}
 .Rankgingdiv{
-  
     width: 100%;
-
+    border-bottom: 1px solid black;
     
     text-align: center;
-    
-    
 }
 
 

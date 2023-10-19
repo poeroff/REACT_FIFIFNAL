@@ -3,7 +3,7 @@ import Liveslice from "./Live"
 
 
 const store = configureStore({
-    reducer :  {Live : Liveslice}
+    reducer :  {Live : Liveslice.reducer}
    });
 
 

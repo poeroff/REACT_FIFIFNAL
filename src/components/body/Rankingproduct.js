@@ -5,22 +5,45 @@ import classes from "./Rankingproduct.module.css"
 
 
 const Rankingproduct = (props) => {
-    const dataArray = Object.entries(props.data);
-    console.log(dataArray)
+    const data_top_Array = Object.entries(props.data_top);
+    const data_low_Array = Object.entries(props.data_low);
+
+    
     return (
         <>
 
             <ul className={classes.cardul}>
-                {dataArray.map(([key, value]) => (
-                    <Card className={classes.card}>
+            
+                { data_top_Array.map(([key, value]) => (
+                    
+                    
+                    <Card key={key} className={classes.card} >
+                        
                         <Card.Img variant="top" src="holder.js/100px180" />
                         <Card.Body>
-                            <Card.Title>{value}</Card.Title>
+                            <Card.Title className={classes.title}>{value}</Card.Title>
                             <Card.Text>
-                                Some quick example text 
+                                Some quick example textasdasdsadasdsd 
                             </Card.Text>
                         </Card.Body>
                     </Card>
+                   
+
+                ))}
+            </ul>
+            <ul className={classes.cardul}>
+                { data_low_Array.map(([key, value]) => (
+                    
+                    <Card key={key} className={classes.card} >
+                        <Card.Img variant="top" src="holder.js/100px180" />
+                        <Card.Body>
+                            <Card.Title className={classes.title}>{value}</Card.Title>
+                            <Card.Text>
+                                Some quick example textasdasdsadasdsd 
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
+                    
 
                 ))}
             </ul>
