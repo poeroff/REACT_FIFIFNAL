@@ -1,10 +1,11 @@
-import Header from "../mypageComponents/Mypageheader";
+import Header from "../components/header/Header";
 import MypageInfo from "../mypageComponents/MypageInfo";
 import classes from "./Mypage.module.css";
 import MypageRoot from "./MypageRoot";
 const HOME = () => {
     return (
-        <><Header />
+        <>
+        <Header />
             <main>
                 <div >
                     <MypageInfo />

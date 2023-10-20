@@ -99,7 +99,7 @@ const Liveranking = () => {
        
       
         
-     console.log(count)
+    
       
 
     },[count])

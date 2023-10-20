@@ -6,12 +6,6 @@
    border-bottom: 1px solid gray;
    z-index: 10;
    width: 100%;
-   
-   
-
-  
-   
-   
 }
 .container{
     align-items: center;
@@ -19,7 +13,6 @@
     display: flex;
     margin-left: 10%;
     width: 100%;
-    
 }
 .nav{
     position: relative;
@@ -32,18 +25,16 @@
     justify-content: space-between;
     right: 10%;
     
-    
 }
 
 
 .sinsa{
     color: black;
     float: left;
-    margin-right: 3%;
-    
-  
-    
-    
+}
+.input{
+    margin-top: 0.5%;
+
 }
 .li{
     margin-right: 3%;

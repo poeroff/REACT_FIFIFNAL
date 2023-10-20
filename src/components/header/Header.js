@@ -10,8 +10,13 @@ import Liveranking from "../body/Liveranking";
 
 
 const Header = (props) => {
-    
-    
+  
+
+
+    const product = JSON.parse(localStorage.getItem("product"))
+ 
+
+
     const [dropdown, setdropdonw] = useState(false);
     const [dropdown1, setdropdonw1] = useState(false);
     const [dropdown2, setdropdonw2] = useState(false);
@@ -43,14 +48,12 @@ const Header = (props) => {
         setdropdonw1(false)
     }
 
-
     const handleMouseOver2 = () => {
         setdropdonw2(true)
     }
     const handleMousedown2 = () => {
         setdropdonw2(false)
     }
-
 
     const handleMouseOver3 = () => {
         setdropdonw3(true)
@@ -94,18 +97,26 @@ const Header = (props) => {
         setinput(false);
     }
 
+
+
     return (
         <React.Fragment>
             <header className={classes.header}>
                 <div className={classes.container}>
                     <ul className={classes.nav} >
                         <div className={classes.sinsa} >
-                            <h2 > TAE SINSA </h2>
+                            <h2 >  벛꽃 </h2>
                         </div>
+
+                        <div className={classes.input}>
+                            <input></input>
+
+                        </div>
+                    
                         <div className={classes.li} onMouseOver={handleMouseOver} onMouseOut={handleMousedown}>
                             <li > <Link to="Ranking" className="nav-link px-2 link-secondary" >랭킹</Link></li>
                             {dropdown && <div className={classes.dropdown}>
-                                <Dropdown data={props.data.Ranking}></Dropdown>
+                                <Dropdown data={product.Ranking}></Dropdown>
 
                             </div>}
 
@@ -113,53 +124,50 @@ const Header = (props) => {
                         <div className={classes.li} onMouseOver={handleMouseOver1} onMouseOut={handleMousedown1}>
                             <li > <Link to="" className="nav-link px-2 link-secondary" >업데이트</Link></li>
                             {dropdown1 && <div className={classes.dropdown1}>
-                                <Dropdown data={props.data.Update}></Dropdown>
+                                <Dropdown data={product.Update}></Dropdown>
                             </div>}
 
                         </div>
                         <div className={classes.li} onMouseOver={handleMouseOver2} onMouseOut={handleMousedown2}>
                             <li > <Link to="" className="nav-link px-2 link-secondary" >코디</Link></li>
                             {dropdown2 && <div className={classes.dropdown2}>
-                                <Dropdown data={props.data.stylist}> </Dropdown>
+                                <Dropdown data={product.stylist}> </Dropdown>
                             </div>}
 
                         </div>
                         <div className={classes.li} onMouseOver={handleMouseOver3} onMouseOut={handleMousedown3}>
                             <li > <Link to="" className="nav-link px-2 link-secondary" >세일</Link></li>
                             {dropdown3 && <div className={classes.dropdown3}>
-                                <Dropdown data={props.data.Sale}></Dropdown>
+                                <Dropdown data={product.Sale}></Dropdown>
                             </div>}
 
                         </div>
                         <div className={classes.li} onMouseOver={handleMouseOver4} onMouseOut={handleMousedown4}>
                             <li > <Link to="" className="nav-link px-2 link-secondary" >스페셜</Link></li>
                             {dropdown4 && <div className={classes.dropdown4}>
-                                <Dropdown data={props.data.Special}></Dropdown>
+                                <Dropdown data={product.Special}></Dropdown>
                             </div>}
 
                         </div>
                         <div className={classes.li} onMouseOver={handleMouseOver5} onMouseOut={handleMousedown5}>
                             <li > <Link to="" className="nav-link px-2 link-secondary"> 매거진</Link></li>
                             {dropdown5 && <div className={classes.dropdown5}>
-                                <Dropdown data={props.data.magazine}></Dropdown>
+                                <Dropdown data={product.magazine}></Dropdown>
                             </div>}
 
                         </div>
                         <div className={classes.li} onMouseOver={handleMouseOver6} onMouseOut={handleMousedown6}>
                             <li > <Link to="" className="nav-link px-2 link-secondary" >이벤트</Link></li>
                             {dropdown6 && <div className={classes.dropdown6}>
-                                <Dropdown data={props.data.Event}></Dropdown>
+                                <Dropdown data={product.EVENT}></Dropdown>
                             </div>}
 
                         </div>
-                        <div className={classes.li} onMouseOver={handleMouseOver7} onMouseOut={handleMousedown7}>
-                            <li > <Link to="" className="nav-link px-2 link-secondary" >브랜드</Link></li>
-                           
-                        </div>     
+                      
                     </ul>
                 </div>
             </header>
-        
+
         </React.Fragment>
     )
 }
