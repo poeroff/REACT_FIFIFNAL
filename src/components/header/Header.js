@@ -105,7 +105,7 @@ const Header = (props) => {
                 <div className={classes.container}>
                     <ul className={classes.nav} >
                         <div className={classes.sinsa} >
-                            <h2 >  벛꽃 </h2>
+                            <Link to = "/"> <h2 > 벛꽃 </h2> </Link>
                         </div>
 
                         <div className={classes.input}>
@@ -161,9 +161,7 @@ const Header = (props) => {
                             {dropdown6 && <div className={classes.dropdown6}>
                                 <Dropdown data={product.EVENT}></Dropdown>
                             </div>}
-
                         </div>
-                      
                     </ul>
                 </div>
             </header>

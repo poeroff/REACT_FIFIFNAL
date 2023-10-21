@@ -95,14 +95,10 @@ const Liveranking = () => {
             
     
         },3000)
-        
-       
-      
-        
-    
-      
 
     },[count])
+
+    const title = ["전체","NEW"]
    
 
 
@@ -114,7 +110,7 @@ const Liveranking = () => {
         <React.Fragment >
             <div className={classes.Rankgingdiv}>
                 <h1> 실시간 랭킹 </h1>
-                <button className="ui inverted primary button" style={{ padding: "2%" }} onClick={event => clickhandler(0)}  >전체</button>
+                <button className= "ui inverted primary button" style={{ padding: "2%"}} onClick={event => clickhandler(0)}  >전체</button>
                 <button className="ui inverted secondary button" style={{ marginLeft: "0.5%", marginRight: "0.5%", padding: "2%" }} onClick={event => clickhandler(1)} >NEW</button>
                 <button className="ui inverted red button" style={{ marginLeft: "0.5%", marginRight: "0.5%", padding: "2%" }} >상의</button>
                 <button className="ui inverted orange button" style={{ marginLeft: "0.5%", marginRight: "0.5%", padding: "2%" }}>바지</button>
@@ -127,15 +123,11 @@ const Liveranking = () => {
                 <button className="ui inverted purple button" style={{ marginLeft: "0.5%", marginRight: "0.5%", padding: "2%" }}>뷰티</button>
                 <button className="ui inverted pink button" style={{ marginLeft: "0.5%", marginRight: "0.5%", padding: "2%" }}>리빙</button>
                 <button className="ui inverted brown button" style={{ marginLeft: "0.5%", marginRight: "0.5%", padding: "2%" }}>아우터</button>
-                {initialcounterState[0] && <Rankingproduct data_top={data.RANKING_PRODUCT.NEW} data_low={data.RANKING_PRODUCT.NEW_low} img={all} ></Rankingproduct>}
-                {initialcounterState[1] && <Rankingproduct data_top={data.RANKING_PRODUCT.consultation_low} data_low={data.RANKING_PRODUCT.consultation_top} img={newa}></Rankingproduct>}
+                {initialcounterState[0] && <Rankingproduct title = {title[0]} data_top={data.RANKING_PRODUCT.NEW} data_low={data.RANKING_PRODUCT.NEW_low} img={all} ></Rankingproduct>}
+                {initialcounterState[1] && <Rankingproduct  title = {title[1]} data_top={data.RANKING_PRODUCT.consultation_low} data_low={data.RANKING_PRODUCT.consultation_top} img={newa}></Rankingproduct>}
             </div>
-
-
         </React.Fragment>
-
     )
-
 }
 export default Liveranking
 

@@ -14,7 +14,7 @@ const Rankingproduct = (props) => {
         <>
 
             <ul className={classes.cardul}>
-            
+
                 { data_top_Array.map(([key, value]) => (
                     <Card key={key} className={classes.card} >
                         
