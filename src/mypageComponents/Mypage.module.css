@@ -2,17 +2,20 @@
     position: relative;
     background-color: black;
     padding: 3rem 0 3rem 3rem;
+    margin: 0 auto;
+    color: white;
 }
 
 .mypage_info>h1 {
-    font-size: 1.5rem;
+    font-size: 2.5em;
     font-weight: bold;
+    padding: 20px 0px 24px;
 }
 
 .mypage_info_2 {
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 0px;
+    top: 20px;
 }
 
 .mypage_info_2>a {
@@ -21,6 +24,12 @@
 
 .mypage_info_3 {
     overflow: hidden;
+    padding-left: 40px;
+}
+.button{
+    background-color: transparent;
+    border: 0;
+    color: white;
 }
 
 .mypage_info_profile {
@@ -34,15 +43,18 @@
 .mypage_info_4 {
     float: left;
     padding-left: 3rem;
+
 }
 
 .mypage_info_name>strong {
-    font-size: 2.5rem;
-    font-weight: bold;
+    display: inline-block;
+    font-size: 58px;
+    line-height: 87px;
+    color: rgb(255, 255, 255);
 }
 
-.mypage_info_name>a {
-    font-size: 0.8rem;
+.mypage_info_name>button {
+    text-align: right;
     color: gray;
 }
 
@@ -60,21 +72,23 @@
     font-size: 0.9rem;
 }
 
-.mypage_info_level_2>a {
-    font-size: 0.7rem;
+.mypage_info_level_2>button {
     color: gray;
     margin-left: 2%;
 }
-.mypage_info_menu{
+
+.mypage_info_menu {
     display: flex;
     float: left;
     padding: 2rem 0 0 3rem;
 }
-.mypage_info_menu>a{
+
+.mypage_info_menu>button {
     display: flex;
     flex-direction: column;
     width: 10rem;
 }
-.mypage_info_menu>a>strong{
+
+.button>strong {
     font-size: 2rem;
 }
