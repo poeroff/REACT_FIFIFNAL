@@ -25,6 +25,8 @@ const Root = () => {
             <section className={classes.section}>
                 <Slider></Slider>
                 <Liveranking> </Liveranking>
+
+                
             </section>
 
 

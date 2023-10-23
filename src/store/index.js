@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-
+import sideSlice from './side-action';
 
 
 const store = configureStore({
-    reducer :  {}
+    reducer :  {side : sideSlice.reducer},
    });
 
 

@@ -8,7 +8,8 @@ import React from "react";
 import { initializeApp } from "firebase/app";
 import { getStorage, ref, getDownloadURL, listAll } from "firebase/storage";
 import { motion } from "framer-motion";
-
+import Description from "../descripthion/Description"
+import Description2 from "../descripthion/Description2";
 
 
 
@@ -55,17 +56,13 @@ const Liveranking = () => {
             listAll(imageRef).then((result) => {
                     result.items.forEach((itemRef) => {
                         getDownloadURL(itemRef)
-                            .then((url) => {
-
-                                
+                            .then((url) => {             
                                 if(i === 0){
-                                    
                                     AllArray.push(url)
                                     setall(AllArray);
                                     
                                 }
-                                else if(i === 1){
-                                   
+                                else if(i === 1){         
                                     NewArray.push(url)
                                     setnewa(NewArray);
 
@@ -81,7 +78,6 @@ const Liveranking = () => {
                 });
         }
     }, []);
-
     const [ count , setcount] = useState(0);
     useEffect(() => {
 
@@ -125,7 +121,12 @@ const Liveranking = () => {
                 <button className="ui inverted brown button" style={{ marginLeft: "0.5%", marginRight: "0.5%", padding: "2%" }}>아우터</button>
                 {initialcounterState[0] && <Rankingproduct title = {title[0]} data_top={data.RANKING_PRODUCT.NEW} data_low={data.RANKING_PRODUCT.NEW_low} img={all} ></Rankingproduct>}
                 {initialcounterState[1] && <Rankingproduct  title = {title[1]} data_top={data.RANKING_PRODUCT.consultation_low} data_low={data.RANKING_PRODUCT.consultation_top} img={newa}></Rankingproduct>}
+                <Description></Description>
+                <Description2></Description2> 
             </div>
+         
+           
+            
         </React.Fragment>
     )
 }
