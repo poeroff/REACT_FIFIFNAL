@@ -4,45 +4,44 @@ const MypageInfo = () => {
     return (
         <React.Fragment>
             <section className={classes.mypage_info}>
-                <h1>
-                    <a>My Page</a>
-                </h1>
+                <h1 className={classes.mypage_title}>My Page</h1>
                 <div className={classes.mypage_info_2}>
-                    <a>장바구니</a>
-                    <a>고객센터</a>
-                    <a>로그아웃</a>
+                    <button className={classes.button}>장바구니</button>
+                    <button className={classes.button}>고객센터</button>
+                    <button className={classes.button}>로그아웃</button>
                 </div>
                 <div className={classes.mypage_info_3}>
                     <div className={classes.mypage_info_profile}></div>
                     <div className={classes.mypage_info_4}>
                         <div className={classes.mypage_info_name}>
                             <strong>뉴비_4a8f29533f4c</strong>
-                            <a>회원정보변경</a>
+                            <button className={classes.button}>회원정보변경</button>
                         </div>
                         <div className={classes.mypage_info_level}>
                             <strong>LV.1 뉴비</strong>
                             <span>가입일 :2023.10.15</span>
                         </div>
                         <p className={classes.mypage_info_level_2}>김*아님 다음 등급인 루키까지 2,001점 남았습니다.
-                            <a>등급혜택 </a></p>
+                            <button className={classes.button}>등급혜택 </button>
+                        </p>
                     </div>
                     <div className={classes.mypage_info_menu}>
-                        <a>
+                        <button className={classes.button}>
                             <em>적립금 </em>
                             <strong>0</strong>
-                        </a>
-                        <a href="https://www.musinsa.com/member/point">
+                        </button>
+                        <button className={classes.button}>
                             <em>포인트 </em>
                             <strong>0</strong>
-                        </a>
-                        <a>
+                        </button>
+                        <button className={classes.button}>
                             <em>쿠폰 </em>
                             <strong>170</strong>
-                        </a>
-                        <a>
+                        </button>
+                        <button className={classes.button}>
                             <em>후기작성</em>
                             <strong>0</strong>
-                        </a>
+                        </button>
                     </div>
                 </div>
             </section>
