@@ -9,6 +9,7 @@ import HOME from './mypageComponents/HOME';
 const router = createBrowserRouter([
   {path: '/',children: [
     {index : true, element: <Root />, loader: RootLoader},
+    {path : ":productId"},
   
     {path: "mypage",  children : [ 
       {index : true, element: <HOME></HOME>},

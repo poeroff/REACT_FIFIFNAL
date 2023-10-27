@@ -1,5 +1,5 @@
 import Header from "../components/header/Header";
-import MypageInfo from "../mypageComponents/MypageInfo";
+import MypageInfo from "./MypageInfo";
 import classes from "./Mypage.module.css";
 import MypageRoot from "./MypageRoot";
 const HOME = () => {
