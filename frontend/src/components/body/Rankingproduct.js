@@ -16,7 +16,7 @@ const Rankingproduct = (props) => {
             <ul className={classes.cardul}>
 
                 { data_top_Array.map(([key, value]) => (
-                     <Link to ={`${key}`}>
+                    
                     <Card key={key} className={classes.card} >
                        
                         <Card.Img className={classes.Img} src={props.img[0]}/>
@@ -27,14 +27,14 @@ const Rankingproduct = (props) => {
                             </Card.Text>
                         </Card.Body>
                     </Card>
-                    </Link>
+                    
                    
 
                 ))}
             </ul>
             <ul className={classes.cardul}>
                 { data_low_Array.map(([key, value]) => (
-                    <Link to ={`${key}`}>
+                   
                     
                     <Card key={key} className={classes.card} >
                         <Card.Img className={classes.Img} src={props.img[1]}/>
@@ -45,7 +45,7 @@ const Rankingproduct = (props) => {
                             </Card.Text>
                         </Card.Body>
                     </Card>
-                    </Link>
+                   
                     
 
                 ))}

@@ -13,7 +13,7 @@ const Slider = () => {
     }
 
     const popular = useSelector(state => state.side.product[0]);
-    console.log(popular)
+    
 
     const jacket  = useSelector(state => state.side.product[1]);
 

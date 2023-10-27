@@ -1,6 +1,6 @@
 import classes from "./Header.module.css";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import Dropdown from "./Dropdown";
 import React from "react";
 import Slider from "../side/Slider";
@@ -28,6 +28,7 @@ const Header = (props) => {
     const [displayBlock, setDisplay] = useState(''); // 호준 코드 추가
     const [input, setinput] = useState(false);
     const [sideinvalid, setsideinvalid] = useState(false);
+    const [SHOPHEADER, SETSHOPHEADER] = useState({})
 
     const buttonhandler = () => {
         setsideinvalid(!sideinvalid);
@@ -96,9 +97,20 @@ const Header = (props) => {
     const outputhandler = () => {
         setinput(false);
     }
+    useEffect(() =>{
 
+        const maindata = async() =>{
+            const response = await fetch("http://localhost:5000/");
 
-
+            if(!response.ok){
+                throw new Error("NOT DATA")
+            }
+            const data = await response.json();
+            SETSHOPHEADER(data);
+        }
+        maindata()
+    },[])
+   
     return (
         <React.Fragment>
             <header className={classes.header}>
@@ -110,13 +122,12 @@ const Header = (props) => {
 
                         <div className={classes.input}>
                             <input></input>
-
                         </div>
                     
                         <div className={classes.li} onMouseOver={() => setDisplay(0)} onMouseOut={() => setDisplay('')}>
                             <li > <Link to="Ranking" className="nav-link px-2 link-secondary" >랭킹</Link></li>
                             {displayBlock === 0 && <div className={classes.dropdown}>
-                                <Dropdown data={product.Ranking}></Dropdown>
+                                <Dropdown data={SHOPHEADER.Ranking}></Dropdown>
 
                             </div>}
 
@@ -124,42 +135,42 @@ const Header = (props) => {
                         <div className={classes.li} onMouseOver={() => setDisplay(1)} onMouseOut={() => setDisplay('')}>
                             <li > <Link to="" className="nav-link px-2 link-secondary" >업데이트</Link></li>
                             {displayBlock === 1 && <div className={classes.dropdown1}>
-                                <Dropdown data={product.Update}></Dropdown>
+                                <Dropdown data={SHOPHEADER.Update}></Dropdown>
                             </div>}
 
                         </div>
                         <div className={classes.li} onMouseOver={() => setDisplay(2)} onMouseOut={() => setDisplay('')}>
                             <li > <Link to="" className="nav-link px-2 link-secondary" >코디</Link></li>
                             {displayBlock === 2 && <div className={classes.dropdown2}>
-                                <Dropdown data={product.stylist}> </Dropdown>
+                                <Dropdown data={SHOPHEADER.stylist}> </Dropdown>
                             </div>}
 
                         </div>
                         <div className={classes.li} onMouseOver={() => setDisplay(3)} onMouseOut={() => setDisplay('')}>
                             <li > <Link to="" className="nav-link px-2 link-secondary" >세일</Link></li>
                             {displayBlock === 3 && <div className={classes.dropdown3}>
-                                <Dropdown data={product.Sale}></Dropdown>
+                                <Dropdown data={SHOPHEADER.Sale}></Dropdown>
                             </div>}
 
                         </div>
                         <div className={classes.li} onMouseOver={() => setDisplay(4)} onMouseOut={() => setDisplay('')}>
                             <li > <Link to="" className="nav-link px-2 link-secondary" >스페셜</Link></li>
                             {displayBlock === 4 && <div className={classes.dropdown4}>
-                                <Dropdown data={product.Special}></Dropdown>
+                                <Dropdown data={SHOPHEADER.Special}></Dropdown>
                             </div>}
 
                         </div>
                         <div className={classes.li} onMouseOver={() => setDisplay(5)} onMouseOut={() => setDisplay('')}>
                             <li > <Link to="" className="nav-link px-2 link-secondary"> 매거진</Link></li>
                             {displayBlock === 5 && <div className={classes.dropdown5}>
-                                <Dropdown data={product.magazine}></Dropdown>
+                                <Dropdown data={SHOPHEADER.magazine}></Dropdown>
                             </div>}
 
                         </div>
                         <div className={classes.li} onMouseOver={() => setDisplay(6)} onMouseOut={() => setDisplay('')}>
                             <li > <Link to="" className="nav-link px-2 link-secondary" >이벤트</Link></li>
                             {displayBlock === 6 && <div className={classes.dropdown6}>
-                                <Dropdown data={product.EVENT}></Dropdown>
+                                <Dropdown data={SHOPHEADER.EVENT}></Dropdown>
                             </div>}
                         </div>
                     </ul>
