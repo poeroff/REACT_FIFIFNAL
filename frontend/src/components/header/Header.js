@@ -34,63 +34,6 @@ const Header = (props) => {
         setsideinvalid(!sideinvalid);
     }
 
-    // const handleMouseOver = () => {
-    //     setdropdonw(true)
-    // }
-    // const handleMousedown = () => {
-    //     setdropdonw(false)
-    // }
-
-    // const handleMouseOver1 = () => {
-    //     setdropdonw1(true)
-    // }
-
-    // const handleMousedown1 = () => {
-    //     setdropdonw1(false)
-    // }
-
-    // const handleMouseOver2 = () => {
-    //     setdropdonw2(true)
-    // }
-    // const handleMousedown2 = () => {
-    //     setdropdonw2(false)
-    // }
-
-    // const handleMouseOver3 = () => {
-    //     setdropdonw3(true)
-    // }
-    // const handleMousedown3 = () => {
-    //     setdropdonw3(false)
-    // }
-
-    // const handleMouseOver4 = () => {
-    //     setdropdonw4(true)
-    // }
-    // const handleMousedown4 = () => {
-    //     setdropdonw4(false)
-    // }
-
-    // const handleMouseOver5 = () => {
-    //     setdropdonw5(true)
-    // }
-    // const handleMousedown5 = () => {
-    //     setdropdonw5(false)
-    // }
-
-    // const handleMouseOver6 = () => {
-    //     setdropdonw6(true)
-    // }
-    // const handleMousedown6 = () => {
-    //     setdropdonw6(false)
-    // }
-
-    // const handleMouseOver7 = () => {
-    //     setdropdonw7(true)
-    // }
-    // const handleMousedown7 = () => {
-    //     setdropdonw7(false)
-    // }
-
     const inputhandler = () => {
         setinput(true);
     }
@@ -110,6 +53,43 @@ const Header = (props) => {
         }
         maindata()
     },[])
+
+    const data = {
+        EVENT: {
+            V1: "래플", V2:"랜덤 이벤트" , V3: "룩북 이벤트" ,V4:"체험단", V5:"회원 후기" ,V6:"신규 브랜드",V7:"뉴브랜드 데이",V8:"첫 구매 990원",V9:"휴면 이벤트",V10:"사은품"
+        },
+        Ranking:{
+            R1 :"상품",
+            R2 : "브랜드",
+            R3 : "검색어"
+        },
+        Sale :{
+            A1: "쿠폰",
+            A2: "세일",
+            A3: "타임세일",
+            A4 : "기획전"
+      
+        },
+        Special:{
+            E1: "쇼케이스",
+            E2: "스폐셜이슈",
+            E3: "단독상품",
+      
+        },
+        Update:{
+            update_1 : "신상품",
+            update_2 : "재입고",
+            update_3 : "세일소식",
+            update_4 : "이벤트",
+        },
+        magazine : {
+            M1: "뉴스",M2: "매거진",M3: "쇼케이스",M4: "커뮤니티",M5: "브랜드 구인"
+      
+        },
+        stylist:{
+            S1: "코디숍",S2: "코디맵",S3: "브랜드 스냅",S4: "스트립 스냅"
+        }
+      }
    
     return (
         <React.Fragment>
@@ -127,7 +107,7 @@ const Header = (props) => {
                         <div className={classes.li} onMouseOver={() => setDisplay(0)} onMouseOut={() => setDisplay('')}>
                             <li > <Link to="Ranking" className="nav-link px-2 link-secondary" >랭킹</Link></li>
                             {displayBlock === 0 && <div className={classes.dropdown}>
-                                <Dropdown data={SHOPHEADER.Ranking}></Dropdown>
+                                <Dropdown data={data.Ranking}></Dropdown>
 
                             </div>}
 
@@ -135,42 +115,42 @@ const Header = (props) => {
                         <div className={classes.li} onMouseOver={() => setDisplay(1)} onMouseOut={() => setDisplay('')}>
                             <li > <Link to="" className="nav-link px-2 link-secondary" >업데이트</Link></li>
                             {displayBlock === 1 && <div className={classes.dropdown1}>
-                                <Dropdown data={SHOPHEADER.Update}></Dropdown>
+                                <Dropdown data={data.Update}></Dropdown>
                             </div>}
 
                         </div>
                         <div className={classes.li} onMouseOver={() => setDisplay(2)} onMouseOut={() => setDisplay('')}>
                             <li > <Link to="" className="nav-link px-2 link-secondary" >코디</Link></li>
                             {displayBlock === 2 && <div className={classes.dropdown2}>
-                                <Dropdown data={SHOPHEADER.stylist}> </Dropdown>
+                                <Dropdown data={data.stylist}> </Dropdown>
                             </div>}
 
                         </div>
                         <div className={classes.li} onMouseOver={() => setDisplay(3)} onMouseOut={() => setDisplay('')}>
                             <li > <Link to="" className="nav-link px-2 link-secondary" >세일</Link></li>
                             {displayBlock === 3 && <div className={classes.dropdown3}>
-                                <Dropdown data={SHOPHEADER.Sale}></Dropdown>
+                                <Dropdown data={data.Sale}></Dropdown>
                             </div>}
 
                         </div>
                         <div className={classes.li} onMouseOver={() => setDisplay(4)} onMouseOut={() => setDisplay('')}>
                             <li > <Link to="" className="nav-link px-2 link-secondary" >스페셜</Link></li>
                             {displayBlock === 4 && <div className={classes.dropdown4}>
-                                <Dropdown data={SHOPHEADER.Special}></Dropdown>
+                                <Dropdown data={data.Special}></Dropdown>
                             </div>}
 
                         </div>
                         <div className={classes.li} onMouseOver={() => setDisplay(5)} onMouseOut={() => setDisplay('')}>
                             <li > <Link to="" className="nav-link px-2 link-secondary"> 매거진</Link></li>
                             {displayBlock === 5 && <div className={classes.dropdown5}>
-                                <Dropdown data={SHOPHEADER.magazine}></Dropdown>
+                                <Dropdown data={data.magazine}></Dropdown>
                             </div>}
 
                         </div>
                         <div className={classes.li} onMouseOver={() => setDisplay(6)} onMouseOut={() => setDisplay('')}>
                             <li > <Link to="" className="nav-link px-2 link-secondary" >이벤트</Link></li>
                             {displayBlock === 6 && <div className={classes.dropdown6}>
-                                <Dropdown data={SHOPHEADER.EVENT}></Dropdown>
+                                <Dropdown data={data.EVENT}></Dropdown>
                             </div>}
                         </div>
                     </ul>
