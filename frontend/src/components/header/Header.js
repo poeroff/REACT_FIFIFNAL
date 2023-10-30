@@ -40,19 +40,7 @@ const Header = (props) => {
     const outputhandler = () => {
         setinput(false);
     }
-    useEffect(() =>{
 
-        const maindata = async() =>{
-            const response = await fetch("http://localhost:5000/");
-
-            if(!response.ok){
-                throw new Error("NOT DATA")
-            }
-            const data = await response.json();
-            SETSHOPHEADER(data);
-        }
-        maindata()
-    },[])
 
     const data = {
         EVENT: {
@@ -99,7 +87,6 @@ const Header = (props) => {
                         <div className={classes.sinsa} >
                             <Link to = "/"> <h2 > 벛꽃 </h2> </Link>
                         </div>
-
                         <div className={classes.input}>
                             <input></input>
                         </div>
@@ -108,9 +95,7 @@ const Header = (props) => {
                             <li > <Link to="Ranking" className="nav-link px-2 link-secondary" >랭킹</Link></li>
                             {displayBlock === 0 && <div className={classes.dropdown}>
                                 <Dropdown data={data.Ranking}></Dropdown>
-
                             </div>}
-
                         </div>
                         <div className={classes.li} onMouseOver={() => setDisplay(1)} onMouseOut={() => setDisplay('')}>
                             <li > <Link to="" className="nav-link px-2 link-secondary" >업데이트</Link></li>
