@@ -5,12 +5,12 @@ import Root, { loader as RootLoader } from './components/Home/Root';
 
 import MypageRoot from './mypageComponents/MypageRoot';
 import HOME from './mypageComponents/HOME';
+import Login from './components/Logincompnents/Login';
 
 const router = createBrowserRouter([
   {path: '/',children: [
     {index : true, element: <Root />, loader: RootLoader},
-    {path : ":productId"},
-  
+    {path : "login", element:<Login></Login>},
     {path: "mypage",  children : [ 
       {index : true, element: <HOME></HOME>},
       {path : "HOME",element:<HOME></HOME>}

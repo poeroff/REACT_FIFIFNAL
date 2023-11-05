@@ -14,8 +14,7 @@ const Underhead = () => {
     return (
         <React.Fragment>
             <ul className={classes.ul}>
-                <li> <button className={classes.underbutton} onClick={Loginhandler}> {LOGIN ? "로그인" : "로그아웃"} </button></li>
-                
+                <Link to ="login"><button className={classes.underbutton} onClick={Loginhandler}> {LOGIN ? "로그인" : "로그아웃"} </button></Link>
                 <li className={classes.lies}> <Link to="mypage" style={{ textDecoration: "none", color: "black" }}> 마이 페이지 </Link></li>
                 <li className={classes.lies}> <Link to="recent" style={{ textDecoration: "none", color: "black" }}> 최근 본 상품</Link></li>
                 <li className={classes.lies}> <Link to="likes" style={{ textDecoration: "none", color: "black" }}> 좋아요</Link></li>
