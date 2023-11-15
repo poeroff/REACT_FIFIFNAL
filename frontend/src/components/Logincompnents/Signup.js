@@ -73,7 +73,7 @@ const Signup = () => {
 
                         <div className='d-flex flex-row mt-2'>
                             <MDBIcon fas icon="cubes fa-3x me-3" style={{ color: '#ff6219' }} />
-                            <span className="h1 fw-bold mb-0">Logo</span>
+                            <span className="h1 fw-bold mb-0">KIMCHI</span>
                         </div>
 
                         <h5 className="fw-normal my-4 pb-3" style={{ letterSpacing: '1px' }}>Sign into your account</h5>
@@ -82,7 +82,7 @@ const Signup = () => {
                         <form onSubmit={submithandler}>
                             <MDBInput wrapperClass='mb-4' label='email'  type='email' name="email" size="lg" onChange={inputhandler}  />
                             <MDBInput  wrapperClass='mb-4' label='password'  type='password' name ="password" size="lg" onChange={inputhandler}  />
-                            <MDBBtn className={classes.btn} color='dark' size='lg' type="submit">Sign up</MDBBtn>
+                            <Link to = "/"> <MDBBtn className={classes.btn} color='dark' size='lg' type="submit">Sign up</MDBBtn> </Link>
                             
                         </form>
                     
