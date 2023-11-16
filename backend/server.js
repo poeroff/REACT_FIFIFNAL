@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const bodyparser = require("body-parser");
+const sequelize = require("./util/database");
 const cors = require('cors');
 const mysql = require('mysql2'); // mysql2 모듈을 추가
 const mongoose = require("mongoose")
@@ -12,6 +12,15 @@ const mainpageRoutes = require("./router/mainpage");
 const userRoutes = require("./router/user")
 app.use(mainpageRoutes);
 app.use(userRoutes)
+
+require("dotenv").config()
+
+sequelize.sync().then(result => {
+    console.log("2000번 포트에 연결이 성공되었습니다")
+  app.listen(2000);
+}).catch(err=>{
+  console.log(err);
+})
 
 // MySQL 연결 정보
 // const db = mysql.createConnection({
@@ -57,12 +66,3 @@ app.use(userRoutes)
 //     }
 //   });
 // });
-require("dotenv").config()
-mongoose.connect(`${process.env.DB_URL}`).then(result => {
-  console.log("2000번 포트에 연결되었습니다")
-  app.listen(2000)
-}).
-catch(err=>{
-  console.log(err);
-
-})
