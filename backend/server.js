@@ -16,7 +16,6 @@ app.use(userRoutes)
 
 
 app.use((error ,req,res,next)=>{
-  console.log("asds")
   const status = error.statusCode || 500
   const meesage = error.message;
   const data  = error.data

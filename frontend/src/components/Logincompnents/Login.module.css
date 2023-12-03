@@ -1,4 +1,27 @@
-body {
-  background-color: whitesmoke;
-  overflow: hidden;
+
+.btn {
+  background-color: black;
+  width: 100%;
+  padding: 2%;
+  margin-bottom: 3%;
 }
+
+.Logininput {
+  width: 100%;
+  border: 1px solid gray;
+  margin-bottom: 5%;
+  padding: 1.5%;
+}
+.error {
+  border: 1px solid red;
+  width: 100%;
+  margin-bottom: 5%;
+  padding: 1.5%;
+}
+.errormessage {
+  width: 100%;
+  text-align: center;
+  color: red;
+  font-size: 1vmax;
+}
+

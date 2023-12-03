@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Logo from "../../imgfile/model.jpg"
 import { useNavigate } from 'react-router-dom';
 import { BsArrowLeftSquareFill } from "react-icons/bs";
@@ -22,6 +22,9 @@ const Signup = () => {
     const [formData, setformData] = useState([])
     const [errormessage, seterrormessage] = useState([]);
     const [errortype, seterrortype] = useState([]);
+    const inputemail = useRef();
+    const inputpassword = useRef()
+    const inputconfirmpassword= useRef()
     const navigate = useNavigate();
     const signuphandler = (event) => {
         event.preventDefault();
@@ -30,21 +33,17 @@ const Signup = () => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(formData)
+            body: JSON.stringify({email : inputemail.current.value , password : inputpassword.current.value , confirmpassword : inputconfirmpassword.current.value})
         }).then(res => res.json()).then(resData => {
             if(resData.message === "User created!"){
                 navigate("/")
-           
             }
             const errorArray = resData.data;
             seterrormessage(prevstate => errorArray.map(err => (err.msg)));
             seterrortype(prevstate => errorArray.map(err => (err.path)));
         }).catch(err => { console.log(err) })
     }
-    const inputhandler = (event) => {
-        const { name, value } = event.target;
-        setformData({ ...formData, [name]: value })
-    }
+ 
     return (
         <MDBContainer className="my-5">
             <MDBCard>
@@ -59,14 +58,13 @@ const Signup = () => {
                                 <MDBIcon fas icon="cubes fa-3x me-3" style={{ color: '#ff6219' }} />
                                 <span className="h1 fw-bold mb-0">SLEEP</span>
                                 <Link to="/login"><BsArrowLeftSquareFill size="40" color="black"/></Link>
-                                
                             </div>
                             <h5 className="fw-normal my-4 pb-3" style={{ letterSpacing: '1px' }}>Sign into your account</h5>
                             <form onSubmit={signuphandler} noValidate>
                                 {errormessage && <p className={classes.errormessage}>{errormessage[0]}</p>}
-                                <input className={errortype.includes("email") ? classes.error : classes.singupinput} placeholder="Email" label='email' type='email' name="email" size="lg" onChange={inputhandler} />
-                                <input className={errortype.includes("password") ? classes.error : classes.singupinput} placeholder="Password" label='password' type='password' name="password" size="lg" onChange={inputhandler} />
-                                <input className={errortype.includes("confirmpassword") ? classes.error : classes.singupinput} placeholder="Confirmpassword" label='confirmpassword' type='text' name="confirmpassword" size="lg" onChange={inputhandler} />
+                                <input className={errortype.includes("email") ? classes.error : classes.singupinput} placeholder="Email" type='email' name="email" ref={inputemail} />
+                                <input className={errortype.includes("password") ? classes.error : classes.singupinput} placeholder="Password" type='password' name="password" ref={inputpassword} />
+                                <input className={errortype.includes("confirmpassword") ? classes.error : classes.singupinput} placeholder="Confirmpassword"  type='text' name="confirmpassword"  ref={inputconfirmpassword} />
                                 <MDBBtn className={classes.btn} color='dark' size='lg' type="submit"> Sign up </MDBBtn>
                             </form>
                         </MDBCardBody>
