@@ -27,7 +27,6 @@ const Login = () => {
             <main>
                 <Outlet></Outlet>
             </main>
-
             <MDBCard>
                 <MDBRow className='g-0'>
 

@@ -5,15 +5,11 @@ const sequelize = require("../util/database");
 const userinfo = sequelize.define("user_info",{
     user_seq : {
         type : Sequelize.BIGINT,
+        primaryKey: true,
+        autoIncrement: true,
         allowNull : false,
-
     },
-    id : {
-        type : Sequelize.STRING,
-        allowNull : false,
 
-
-    },
     email : {
         type : Sequelize.STRING,
         allowNull : false,
@@ -26,47 +22,41 @@ const userinfo = sequelize.define("user_info",{
     },
     role: {
         type : Sequelize.STRING,
+        defaultValue : "admin",
         allowNull : false,
 
     },
     name : {
         type : Sequelize.STRING,
+        allowNull : true,
         
     },
     profile_image : {
         type : Sequelize.STRING,
+        allowNull : true,
        
-
-    },
-    cover_image:{
-        type : Sequelize.STRING,
 
     },
     point:{
         type : Sequelize.BIGINT,
         allowNull : false,
+        defaultValue : 0 
 
     },
     is_validated : {
-        allowNull : false,
-
-    },
-    date_add:{
-        type : Sequelize.DATE,
-        allowNull : false,
-
-    },
-    date_mode:{
-        type : Sequelize.DATE,
-        allowNull : false,
+        type : Sequelize.BOOLEAN,
+        defaultValue : false ,
+       
 
     },
     address :{
         type : Sequelize.STRING,
+        allowNull : true,
 
     },
     phone : {
         type : Sequelize.STRING,
+        allowNull : true,
 
     },
 },{

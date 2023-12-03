@@ -2,8 +2,9 @@ const express = require("express");
 const app = express();
 const sequelize = require("./util/database");
 const cors = require('cors');
-const mysql = require('mysql2'); // mysql2 모듈을 추가
-const mongoose = require("mongoose")
+require("dotenv").config()
+
+
 
 app.use(cors());
 app.use(express.json());
@@ -13,7 +14,16 @@ const userRoutes = require("./router/user")
 app.use(mainpageRoutes);
 app.use(userRoutes)
 
-require("dotenv").config()
+
+app.use((error ,req,res,next)=>{
+  console.log("asds")
+  const status = error.statusCode || 500
+  const meesage = error.message;
+  const data  = error.data
+  res.status(status).json({message : meesage , data : data})
+})
+
+
 
 sequelize.sync().then(result => {
     console.log("2000번 포트에 연결이 성공되었습니다")
