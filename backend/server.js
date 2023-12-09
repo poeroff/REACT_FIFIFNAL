@@ -23,9 +23,6 @@ app.use((error ,req,res,next)=>{
 })
 
 
-app.use("/api",(req,res,next)=>{
-  console.log("heelo")
-})
 
 
 

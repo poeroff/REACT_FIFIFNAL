@@ -8,10 +8,10 @@ const Google = () => {
         console.log(error);
     }
     return (
-        <div className={classes.container}   >
+        <div className={classes.container}  >
             <GoogleLogin
-                onSuccess={onSuccess => {
-                    console.log("로그인 성공");
+                onSuccess={responseData => {
+                    console.log(responseData)
                 }}
                 onError={() => {
                     console.log('Login Failed');

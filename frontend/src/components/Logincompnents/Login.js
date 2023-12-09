@@ -7,7 +7,7 @@ import { MDBBtn, MDBContainer, MDBCard, MDBCardBody, MDBCardImage, MDBRow, MDBCo
     from 'mdb-react-ui-kit';
 import { Link } from "react-router-dom";
 import { Outlet } from "react-router-dom"
-import KakaoLogin from "./KakaoLogin"
+import KakaoTalkLogin from "./KakaoTalkLogin"
 import GoogleLogin from "./Google"
 
 
@@ -46,14 +46,9 @@ const Login = () => {
                             <Link to="Signup">Don't have an account? Register here</Link>
                         </MDBCardBody>
                         <div className={classes.Login}>
-                            <KakaoLogin></KakaoLogin>
+                            <KakaoTalkLogin></KakaoTalkLogin>
                             <GoogleLogin></GoogleLogin>
                         </div>
-
-
-
-
-
                     </MDBCol>
                 </MDBRow>
             </MDBCard>
