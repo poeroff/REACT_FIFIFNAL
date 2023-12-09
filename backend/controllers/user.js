@@ -1,5 +1,5 @@
 const User = require("../models/user_info")
-
+const axios = require("axios")
 const { validationResult } = require("express-validator");
 
 exports.postsign = async (req, res, next) => {
@@ -10,6 +10,7 @@ exports.postsign = async (req, res, next) => {
             const error = new Error('Validation failed.');
             error.statusCode = 422;
             error.data = errors.array();
+           
             throw error;
         }
         await User.create({ email: email, password: password })
@@ -21,6 +22,25 @@ exports.postsign = async (req, res, next) => {
         }
         next(err);
     }
+}
+exports.KakaoLogin = async(req,res,next)=>{
+    const {code} = req.query
+    
+    const REDIRECT_URI = "http://localhost:2000/login/kakao"
+    const REST_API_KEY = "c2c9d7624e8352d19ded017f4f838cc7"
+    const url = 'https://kauth.kakao.com/oauth/token';
+    const requestBody = `grant_type=authorization_code&client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&code=${code}`;
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        "charset":"utf-8"
+      },
+      body: requestBody
+    })
+      .then(response => response.json())
+      .then(resData => console.log(resData))
+      .catch(error => console.error('Error:', error));
 }
 
 exports.postLogin = async (req, res, next) => {

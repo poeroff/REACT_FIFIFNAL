@@ -1,15 +1,19 @@
 import React, { useState, useRef } from "react";
 import Logo from "../../imgfile/Login.webp"
+import kakao from "../../imgfile/kakao_login_medium_narrow.png"
 
 import classes from "./Login.module.css"
 import { MDBBtn, MDBContainer, MDBCard, MDBCardBody, MDBCardImage, MDBRow, MDBCol, MDBIcon, MDBInput }
     from 'mdb-react-ui-kit';
 import { Link } from "react-router-dom";
 import { Outlet } from "react-router-dom"
+import KakaoLogin from "./KakaoLogin"
+import GoogleLogin from "./Google"
 
 
 
-const Loginhadnler = () =>{
+
+const Loginhadnler = () => {
 
 }
 
@@ -27,7 +31,6 @@ const Login = () => {
                     <MDBCol md='6'>
                         <MDBCardImage src={Logo} alt="login form" className='rounded-start w-100' />
                     </MDBCol>
-
                     <MDBCol md='6'>
                         <MDBCardBody className='d-flex flex-column'>
                             <div className='d-flex flex-row mt-2'>
@@ -36,17 +39,22 @@ const Login = () => {
                             </div>
                             <h5 className="fw-normal my-4 pb-3" style={{ letterSpacing: '1px' }}>Login into your account</h5>
                             <form onSubmit={Loginhadnler}>
-                                <input className={classes.Logininput} placeholder="Email" type='email' name="email"  ref={inputemail} />
-                                <input className= {classes.Logininput}  placeholder="Password"  type='password' name="password"  ref={inputpassword} />
+                                <input className={classes.Logininput} placeholder="Email" type='email' name="email" ref={inputemail} />
+                                <input className={classes.Logininput} placeholder="Password" type='password' name="password" ref={inputpassword} />
                                 <MDBBtn className={classes.btn} color='dark' size='lg' type="submit">Login</MDBBtn>
                             </form>
                             <Link to="Signup">Don't have an account? Register here</Link>
                         </MDBCardBody>
+                        <div className={classes.Login}>
+                            <KakaoLogin></KakaoLogin>
+                            <GoogleLogin></GoogleLogin>
+                        </div>
+
+
+
 
 
                     </MDBCol>
-
-
                 </MDBRow>
             </MDBCard>
 

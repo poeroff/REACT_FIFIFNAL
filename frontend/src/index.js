@@ -8,17 +8,20 @@ import { Provider } from "react-redux"
 import 'semantic-ui-css/semantic.min.css'
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import { GoogleOAuthProvider } from '@react-oauth/google';
 
 import store from "../src/store/index"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Provider store={store}>
-    <React.StrictMode>
-      <App/>
-    </React.StrictMode>
+  <GoogleOAuthProvider clientId="118443814001-jn6pgsbn26k6eouvrcjihis1aj406osn.apps.googleusercontent.com">
+    <Provider store={store}>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
 
-  </Provider>
+    </Provider>
+  </GoogleOAuthProvider>
 
 );
 

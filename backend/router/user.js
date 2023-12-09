@@ -25,5 +25,7 @@ check("confirmpassword").trim().custom((value, {req})=>{
     return true;
 })],usercontroller.postsign);
 
+router.get("/login/kakao",usercontroller.KakaoLogin)
+
 
 module.exports = router;

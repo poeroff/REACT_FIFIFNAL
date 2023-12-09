@@ -23,6 +23,11 @@ app.use((error ,req,res,next)=>{
 })
 
 
+app.use("/api",(req,res,next)=>{
+  console.log("heelo")
+})
+
+
 
 sequelize.sync().then(result => {
     console.log("2000번 포트에 연결이 성공되었습니다")
